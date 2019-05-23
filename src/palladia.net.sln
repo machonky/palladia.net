@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Core", "palladia.core\Palladia.Core.csproj", "{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Test", "Palladia.Test\Palladia.Test.csproj", "{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
