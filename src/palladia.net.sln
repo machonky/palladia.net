@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Core", "palladia.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Test", "Palladia.Test\Palladia.Test.csproj", "{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.OLTP", "Palladia.OLTP\Palladia.OLTP.csproj", "{A3EE6122-C173-40FD-8534-3371F96EE307}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3EE6122-C173-40FD-8534-3371F96EE307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3EE6122-C173-40FD-8534-3371F96EE307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3EE6122-C173-40FD-8534-3371F96EE307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3EE6122-C173-40FD-8534-3371F96EE307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
