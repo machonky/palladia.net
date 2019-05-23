@@ -5,23 +5,23 @@ namespace Palladia.Core
     [Serializable]
     public class Principal
     {
-        public string Id { get; }
+        public Guid Id { get; }
         public string Name { get; }
         public string Description { get; }
 
-        private Principal(string id, string name, string description)
+        private Principal(Guid id, string name, string description)
         {
             Id = id;
             Name = name;
             Description = description;
         }
 
-        public static Principal New(string id, string name, string description)
+        public static Principal New(Guid id, string name, string description)
         {
             return new Principal(id, name, description);
         }
 
-        public static readonly Principal Everyone = Principal.New("Principal.Everyone", "Everyone", "A role representing all users");
+        public static readonly Principal Everyone = Principal.New(Guid.Empty, "Everyone", "A role representing all users");
 
         public override int GetHashCode()
         {
