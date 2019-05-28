@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Palladia.Core
 {
+    [Serializable]
     public class AccessControlList<MessageT> : IAccessControlList<MessageT>
     {
         private readonly HashSetDictionary<MessageT, Principal> _granted = new HashSetDictionary<MessageT, Principal>();

@@ -13,19 +13,25 @@ namespace Palladia.Core
             new Dictionary<TKey, ISetGrouping<TKey, TElement>>();
 
         [Serializable]
-        public class SetGrouping<TKey1, TElement1> : HashSet<TElement1>, ISetGrouping<TKey1, TElement1>
+        public class SetGrouping<TKey1, TElement1> : HashSet<TElement1>, ISetGrouping<TKey1, TElement1>//, ISerializable
         {
             public SetGrouping(TKey1 key)
             {
                 Key = key;
             }
-
+            
             protected SetGrouping(SerializationInfo info, StreamingContext context)
                 : base(info, context)
             {
                 Key = (TKey1)info.GetValue("Key", typeof(TKey1));
             }
 
+            public override void GetObjectData(SerializationInfo info, StreamingContext context)
+            {
+                base.GetObjectData(info, context);
+                info.AddValue("Key", Key);
+            }
+            
             public TKey1 Key { get; set; }
         }
 

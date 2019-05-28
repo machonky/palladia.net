@@ -21,7 +21,9 @@ namespace Palladia.Core
             return new Principal(id, name, description);
         }
 
-        public static readonly Principal Everyone = Principal.New(Guid.Empty, "Everyone", "A role representing all users");
+        public static readonly Principal Everyone = Principal.New(
+            Guid.Parse("00000000-0000-0000-0000-000000000001"), 
+            "Everyone", "A role representing all users");
 
         public override int GetHashCode()
         {

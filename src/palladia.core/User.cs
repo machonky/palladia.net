@@ -9,8 +9,12 @@ namespace Palladia.Core
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public User()
+        public User(Guid id, string name, string description)
         {
+            Id = id;
+            Name = name;
+            Description = description;
+
             Principals.Add(Principal.Everyone);
             Principals.Add(this.AsPrincipal());
         }
