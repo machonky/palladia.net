@@ -5,11 +5,13 @@ namespace Palladia.OLTP.Events
 {
     public class PrincipalRemoved : Event
     {
-        public readonly Guid PrincipalId;
+        public readonly string PrincipalName;
 
-        public PrincipalRemoved(Guid principalId)
+        public PrincipalRemoved(string principalName)
         {
-            this.PrincipalId = principalId;
+            Palladia.Core.Ensure.ArgumentIsNotNullOrWhitespace(principalName, nameof(principalName));
+
+            this.PrincipalName = principalName;
         }
     }
 }

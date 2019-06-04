@@ -6,17 +6,17 @@ namespace Palladia.OLTP.Commands
 {
     public class RemovePrincipal : Command<AuthorisationModel>
     {
-        public Guid PrincipalId { get; private set; }
+        public string PrincipalName { get; }
 
-        public RemovePrincipal(Guid userId)
+        public RemovePrincipal(string name)
         {
-            PrincipalId = userId;
+            PrincipalName = name;
         }
 
         public override void Execute(AuthorisationModel model)
         {
-            model.Principals.Remove(PrincipalId);
-            RaiseEvent(new PrincipalRemoved(PrincipalId));
+            model.Principals.Remove(PrincipalName);
+            RaiseEvent(new PrincipalRemoved(PrincipalName));
         }
     }
 }

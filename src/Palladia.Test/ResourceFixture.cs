@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Palladia.Core;
+using Palladia.OLTP;
 using System;
 
 namespace Palladia.Test
@@ -10,15 +11,12 @@ namespace Palladia.Test
         [Test]
         public void TestSerialization()
         {
-            var id = Guid.Parse("00000000-0000-0000-0000-000000000002");
-            var admin = Principal.New(id, "Admin", "Adminstrator");
-
-            var root = new User(Guid.Parse("00000000-0000-0000-0000-000000000003"),
-                "Root", "The first user of a system");
+            var admin = Principal.New("Admin", "Adminstrator");
+            var root = new User("Root", "The first user of a system");
 
             root.Principals.Add(admin);
 
-            var resource = new Resource<string>("Catalog");
+            var resource = new Resource("Catalog","Description");
             resource.Acl.Grant("Read", Principal.Everyone);
             resource.Acl.Grant("Write", admin);
 

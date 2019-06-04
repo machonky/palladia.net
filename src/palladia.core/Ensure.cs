@@ -13,5 +13,18 @@ namespace Palladia.Core
                 throw new ArgumentNullException(paramName);
             }
         }
+        [Conditional("DEBUG")]
+        public static void ArgumentIsNotNullOrWhitespace(string value, string paramName)
+        {
+            if (value == null)
+            {
+                throw new ArgumentNullException(paramName);
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException(paramName);
+            }
+        }
     }
 }

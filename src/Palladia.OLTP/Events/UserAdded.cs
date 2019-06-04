@@ -9,6 +9,8 @@ namespace Palladia.OLTP.Events
 
         public UserAdded(User newUser)
         {
+            Palladia.Core.Ensure.ArgumentIsNotNull(newUser, nameof(newUser));
+
             NewUser = newUser;
         }
     }

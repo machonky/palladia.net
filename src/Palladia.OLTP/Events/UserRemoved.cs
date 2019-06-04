@@ -5,11 +5,13 @@ namespace Palladia.OLTP.Events
 {
     public class UserRemoved : Event
     {
-        public readonly Guid UserId;
+        public readonly string UserName;
 
-        public UserRemoved(Guid userId)
+        public UserRemoved(string userName)
         {
-            this.UserId = userId;
+            Palladia.Core.Ensure.ArgumentIsNotNullOrWhitespace(userName, nameof(userName));
+
+            this.UserName = userName;
         }
     }
 }

@@ -11,12 +11,10 @@ namespace Palladia.Test
         [Test]
         public void TestSerialization()
         {
-            var id = Guid.Parse("00000000-0000-0000-0000-000000000001");
-            var admin = Principal.New(id, "Admin", "Adminstrator");
+            var admin = Principal.New("Admin", "Adminstrator");
             var tester = new SerializationTester();
             tester.TestSerialization(admin, result =>
             {
-                Assert.That(result.Id, Is.EqualTo(id));
                 Assert.That(result.Name, Is.EqualTo("Admin"));
                 Assert.That(result.Description, Is.EqualTo("Adminstrator"));
             });
@@ -29,7 +27,6 @@ namespace Palladia.Test
             {
                 Assert.That(result.Count, Is.EqualTo(1));
                 var first = result.First();
-                Assert.That(first.Id, Is.EqualTo(id));
                 Assert.That(first.Name, Is.EqualTo("Admin"));
                 Assert.That(first.Description, Is.EqualTo("Adminstrator"));
             });

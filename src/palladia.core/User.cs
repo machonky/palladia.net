@@ -5,13 +5,11 @@ namespace Palladia.Core
     [Serializable]
     public class User
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public User(Guid id, string name, string description)
+        public User(string name, string description)
         {
-            Id = id;
             Name = name;
             Description = description;
 
@@ -26,7 +24,7 @@ namespace Palladia.Core
     {
         public static Principal AsPrincipal(this User user)
         {
-            return Principal.New(user.Id, user.Name, string.Empty);
+            return Principal.New(user.Name, string.Empty);
         }
     }
 }

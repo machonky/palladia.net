@@ -6,32 +6,32 @@ namespace Palladia.OLTP.Commands
 {
     public class UserAddPrincipal : Command<AuthorisationModel>
     {
-        public Guid UserId { get; private set; }
-        public Guid PrincipalId { get; private set; }
+        public string UserName { get; }
+        public string PrincipalName { get; }
 
-        public UserAddPrincipal(Guid userId, Guid principalId)
+        public UserAddPrincipal(string userName, string principalName)
         {
-            UserId = userId;
-            PrincipalId = principalId;
+            UserName = userName;
+            PrincipalName = principalName;
         }
 
         public override void Execute(AuthorisationModel model)
         {
-            if (model.Users.TryGetValue(UserId, out var user))
+            if (model.Users.TryGetValue(UserName, out var user))
             {
-                if (model.Principals.TryGetValue(PrincipalId, out var role))
+                if (model.Principals.TryGetValue(PrincipalName, out var role))
                 {
                     user.Principals.Add(role);
                     RaiseEvent(new UserPrincipalAdded(user, role));
                 }
                 else
                 {
-                    throw new PrincipalNotFoundException(PrincipalId);
+                    throw new PrincipalNotFoundException(PrincipalName);
                 }
             }
             else
             {
-                throw new UserNotFoundException(UserId);
+                throw new UserNotFoundException(UserName);
             }
         }
     }

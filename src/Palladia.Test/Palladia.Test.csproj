@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\palladia.core\Palladia.Core.csproj" />
+    <ProjectReference Include="..\Palladia.OLTP\Palladia.OLTP.csproj" />
   </ItemGroup>
 
 </Project>

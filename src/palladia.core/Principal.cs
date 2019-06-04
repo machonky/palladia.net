@@ -5,29 +5,28 @@ namespace Palladia.Core
     [Serializable]
     public class Principal
     {
-        public Guid Id { get; }
         public string Name { get; }
         public string Description { get; }
 
-        private Principal(Guid id, string name, string description)
+        private Principal(string name, string description)
         {
-            Id = id;
+            Ensure.ArgumentIsNotNull(name, nameof(name));
+
             Name = name;
             Description = description;
         }
 
-        public static Principal New(Guid id, string name, string description)
+        public static Principal New(string name, string description)
         {
-            return new Principal(id, name, description);
+            return new Principal(name, description);
         }
 
         public static readonly Principal Everyone = Principal.New(
-            Guid.Parse("00000000-0000-0000-0000-000000000001"), 
             "Everyone", "A role representing all users");
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return Name.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -35,7 +34,7 @@ namespace Palladia.Core
             var rhs = obj as Principal;
             if (rhs != null)
             {
-                return Id.Equals(rhs.Id);
+                return Name.Equals(rhs.Name);
             }
 
             return false;
