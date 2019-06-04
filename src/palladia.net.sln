@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Core", "palladia.core\Palladia.Core.csproj", "{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palladia.Core", "palladia.core\Palladia.Core.csproj", "{5B3A29D6-E93E-4A42-85CA-09F7E282CB79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.Test", "Palladia.Test\Palladia.Test.csproj", "{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palladia.Test", "Palladia.Test\Palladia.Test.csproj", "{5E1589AC-00AA-4A2E-AA69-76BC54B40D62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladia.OLTP", "Palladia.OLTP\Palladia.OLTP.csproj", "{A3EE6122-C173-40FD-8534-3371F96EE307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palladia.OLTP", "Palladia.OLTP\Palladia.OLTP.csproj", "{A3EE6122-C173-40FD-8534-3371F96EE307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0553524F-A0CC-4EEB-9576-7368F346A69F}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

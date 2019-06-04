@@ -1,6 +1,6 @@
-﻿using Memstate;
+﻿using System;
+using Memstate;
 using Palladia.OLTP.Events;
-using System;
 
 namespace Palladia.OLTP.Commands
 {
