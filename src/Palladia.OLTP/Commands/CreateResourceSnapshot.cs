@@ -6,18 +6,18 @@ namespace Palladia.OLTP.Commands
 {
     public class CreateResourceSnapshot : Command<AuthorisationModel>
     {
-        private readonly Resource resource;
+        private readonly string resourceName;
         private readonly Stream output;
 
-        public CreateResourceSnapshot(Resource resource, Stream output)
+        public CreateResourceSnapshot(string resourceName, Stream output)
         {
-            this.resource = resource;
+            this.resourceName = resourceName;
             this.output = output;
         }
 
         public override void Execute(AuthorisationModel model)
         {
-            if (model.Resources.TryGetValue(resource.Name, out var value))
+            if (model.Resources.TryGetValue(resourceName, out var value))
             {
                 var formatter = new BinaryFormatter();
                 formatter.Serialize(output, value);
