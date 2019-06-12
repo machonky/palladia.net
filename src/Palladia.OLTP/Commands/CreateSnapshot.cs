@@ -1,4 +1,5 @@
 ﻿using Memstate;
+using Palladia.OLTP.Events;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,8 @@ namespace Palladia.OLTP.Commands
         {
             var formatter = new BinaryFormatter();
             formatter.Serialize(output, model);
+
+            RaiseEvent(new SnapshotCreated());
         }
     }
 }

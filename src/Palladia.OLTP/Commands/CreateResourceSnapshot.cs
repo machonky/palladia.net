@@ -1,4 +1,5 @@
 ﻿using Memstate;
+using Palladia.OLTP.Events;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -21,6 +22,8 @@ namespace Palladia.OLTP.Commands
             {
                 var formatter = new BinaryFormatter();
                 formatter.Serialize(output, value);
+
+                RaiseEvent(new ResourceSnapshotCreated(value));
             }
         }
     }
